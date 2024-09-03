@@ -3,8 +3,7 @@ from .views import (
     CocktailOnlyListView, SearchCocktailByName, ListCocktailsByFirstLetter,
     SearchIngredientByName, LookupCocktailById, LookupIngredientById,
     LookupRandomCocktail, FilterByIngredient, FilterByAlcoholic, FilterByCategory,
-    FilterByGlass, ListCategories, ListGlasses, ListIngredients, ListAlcoholicFilters,
-    IngredientCreateView, CocktailCreateView
+    FilterByGlass, ListCategories, ListGlasses, ListIngredients, ListAlcoholicFilters
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
@@ -24,8 +23,6 @@ urlpatterns = [
     path('list/glasses/', ListGlasses.as_view(), name='list-glasses'),
     path('list/ingredients/', ListIngredients.as_view(), name='list-ingredients'),
     path('list/alcoholic/', ListAlcoholicFilters.as_view(), name='list-alcoholic-filters'),
-    path('ingredients/', IngredientCreateView.as_view(), name='ingredient-create'),
-    path('cocktails/', CocktailCreateView.as_view(), name='cocktail-create'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
